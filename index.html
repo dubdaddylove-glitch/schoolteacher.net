@@ -1,63 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>School Ball Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Unblocked Web Dashboard</title>
     <style>
-        body { margin: 0; background: #222; display: flex; justify-content: center; align-items: center; height: 100vh; color: white; font-family: sans-serif; overflow: hidden; }
-        canvas { background: #111; border: 4px solid #fff; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        body { background-color: #0f172a; color: #f8fafc; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; margin: 0; padding: 24px; text-align: center; }
+        header { margin-bottom: 40px; }
+        h1 { font-size: 2.5rem; margin-bottom: 8px; color: #38bdf8; }
+        p { color: #94a3b8; font-size: 1.1rem; }
+        .section-title { text-align: left; max-width: 1100px; margin: 32px auto 16px auto; font-size: 1.5rem; border-bottom: 2px solid #334155; padding-bottom: 8px; color: #f1f5f9; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+        .card { background-color: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 24px; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.2s ease-in-out; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        .card:hover { transform: translateY(-4px); border-color: #38bdf8; background-color: #1e293b; box-shadow: 0 10px 15px -3px rgb(56 189 248 / 0.2); }
+        .icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .title { font-weight: 700; font-size: 1.2rem; margin-bottom: 6px; }
+        .desc { font-size: 0.875rem; color: #94a3b8; }
+        footer { margin-top: 60px; color: #64748b; font-size: 0.875rem; }
     </style>
 </head>
 <body>
-    <canvas id="gameCanvas" width="600" height="400"></canvas>
-    <script>
-        const canvas = document.getElementById("gameCanvas");
-        const ctx = canvas.getContext("2d");
 
-        // Ball attributes
-        let ball = { x: 300, y: 200, radius: 15, dx: 4, dy: 4, color: "#ff4757" };
-        // Paddle attributes
-        let paddle = { width: 120, height: 15, x: 240, y: 370, speed: 8 };
-        let rightPressed = false, leftPressed = false, score = 0;
+    <header>
+        <h1>🎒 Custom School Portal 🎮</h1>
+        <p>A completely private, secure launcher dashboard for popular utility apps and embedded browser systems.</p>
+    </header>
 
-        // Controls
-        document.addEventListener("keydown", (e) => { if(e.key === "Right" || e.key === "ArrowRight") rightPressed = true; if(e.key === "Left" || e.key === "ArrowLeft") leftPressed = true; });
-        document.addEventListener("keyup", (e) => { if(e.key === "Right" || e.key === "ArrowRight") rightPressed = false; if(e.key === "Left" || e.key === "ArrowLeft") leftPressed = false; });
+    <div class="section-title">🕹️ Popular Web Games</div>
+    <div class="grid">
+        <a href="https://www.hoodamath.com/" class="card" target="_blank">
+            <div class="icon">📐</div>
+            <div class="title">Hooda Math</div>
+            <div class="desc">Math, physics, and logic games that pass through strict filters.</div>
+        </a>
+        <a href="https://www.coolmathgames.com/" class="card" target="_blank">
+            <div class="icon">🧩</div>
+            <div class="title">Coolmath Games</div>
+            <div class="desc">The classic unblocked learning arcade layout.</div>
+        </a>
+        <a href="https://sites.google.com/site/unblockedgame67/" class="card" target="_blank">
+            <div class="icon">🏈</div>
+            <div class="title">Retro Bowl Hub</div>
+            <div class="desc">Google Sites mirror containing sports simulation and strategy.</div>
+        </a>
+        <a href="https://github.com/SimonC-Dev/unblocked-games" class="card" target="_blank">
+            <div class="icon">⚡</div>
+            <div class="title">Slope / Arcade Pack</div>
+            <div class="desc">A full open-source game folder ready to clone and run.</div>
+        </a>
+    </div>
 
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Draw Ball
-            ctx.beginPath(); ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*2); ctx.fillStyle = ball.color; ctx.fill(); ctx.closePath();
-            // Draw Paddle
-            ctx.fillStyle = "#2ed573"; ctx.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
-            // Draw Score
-            ctx.fillStyle = "#fff"; ctx.font = "16px Arial"; ctx.fillText("Score: " + score, 8, 20);
+    <div class="section-title">🛠️ Web Apps & Development Tools</div>
+    <div class="grid">
+        <a href="https://github.com/" class="card" target="_blank">
+            <div class="icon">💻</div>
+            <div class="title">GitHub</div>
+            <div class="desc">Host, repository manage, and build custom web applications.</div>
+        </a>
+        <a href="https://codepen.io/" class="card" target="_blank">
+            <div class="icon">✍️</div>
+            <div class="title">CodePen</div>
+            <div class="desc">Create front-end templates or run raw HTML5 frames instantly.</div>
+        </a>
+        <a href="https://replit.com/" class="card" target="_blank">
+            <div class="icon">🚀</div>
+            <div class="title">Replit</div>
+            <div class="desc">Cloud development software environment for running full software code.</div>
+        </a>
+        <a href="https://wikipedia.org/" class="card" target="_blank">
+            <div class="icon">📚</div>
+            <div class="title">Wikipedia</div>
+            <div class="desc">The largest general research repository on the web.</div>
+        </a>
+    </div>
 
-            // Ball bounce off walls
-            if(ball.x + ball.dx > canvas.width - ball.radius || ball.x + ball.dx < ball.radius) ball.dx = -ball.dx;
-            if(ball.y + ball.dy < ball.radius) ball.dy = -ball.dy;
-            
-            // Ball bounce off paddle or Game Over
-            if(ball.y + ball.dy > paddle.y - ball.radius) {
-                if(ball.x > paddle.x && ball.x < paddle.x + paddle.width) {
-                    ball.dy = -ball.dy;
-                    score++;
-                    ball.dx *= 1.05; // Speed up slightly
-                    ball.dy *= 1.05;
-                } else if(ball.y + ball.dy > canvas.height - ball.radius) {
-                    alert("GAME OVER! Final Score: " + score);
-                    document.location.reload();
-                }
-            }
+    <footer>
+        <p>Save this code as <code>index.html</code> and sync it to your own GitHub Pages setup for full access.</p>
+    </footer>
 
-            // Move Paddle
-            if(rightPressed && paddle.x < canvas.width - paddle.width) paddle.x += paddle.speed;
-            if(leftPressed && paddle.x > 0) paddle.x -= paddle.speed;
-
-            ball.x += ball.dx; ball.y += ball.dy;
-            requestAnimationFrame(draw);
-        }
-        draw();
-    </script>
 </body>
 </html>
